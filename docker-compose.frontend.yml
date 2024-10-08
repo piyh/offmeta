@@ -1,0 +1,25 @@
+version: "3.4"
+
+services:
+  frontend:
+    image: frontend:latest  # Matches the IMAGE_NAME in the script
+    environment:
+      - NODE_ENV=production
+      # Add any other environment variables your React app might need
+    networks:
+      - frontend
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.frontend.rule=Host(`${REACT_APP_DOMAIN}`)"
+      - "traefik.http.routers.frontend.entrypoints=web"
+      - "traefik.http.routers.frontend.middlewares=redirect-to-https@docker"
+      - "traefik.http.routers.frontend-secured.rule=Host(`${REACT_APP_DOMAIN}`)"
+      - "traefik.http.routers.frontend-secured.entrypoints=websecure"
+      - "traefik.http.routers.frontend-secured.tls=true"
+      - "traefik.http.routers.frontend-secured.tls.certresolver=myresolver"
+      - "traefik.http.services.frontend.loadbalancer.server.port=80"
+    restart: unless-stopped
+
+networks:
+  frontend:
+    external: true
