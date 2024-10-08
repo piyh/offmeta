@@ -1,0 +1,176 @@
+/* src/styles.css */
+
+body {
+  background-color: #f0f4f8;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  color: #333;
+}
+
+form {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+input[type='text'] {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+}
+
+button {
+  padding: 0 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.card-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.card-item img {
+  width: 100%;
+  display: block;
+}
+
+.card-item a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-item a:hover {
+  opacity: 0.8;
+}
+
+
+.card-placeholder {
+  padding: 20px;
+  text-align: center;
+  color: #666;
+}
+
+/* src/styles.css */
+
+.back-button {
+  margin-bottom: 20px;
+  padding: 8px 16px;
+  background-color: #ddd;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background-color: #ccc;
+}
+
+.card-info {
+  margin-top: 20px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.card-info p {
+  margin-bottom: 10px;
+}
+
+.buy-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #ff5a00;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.buy-button:hover {
+  background-color: #e64a00;
+}
+
+.card-image-placeholder {
+  width: 100%;
+  height: 300px;
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #777;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.app-footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #ddd;
+  margin-top: 40px;
+}
+
+.app-footer p {
+  margin: 5px 0;
+}
+
+.app-footer a {
+  color: #1a73e8;
+  text-decoration: none;
+}
+
+.app-footer a:hover {
+  text-decoration: underline;
+}
+
+
+/* src/index.css or src/styles.css */
+
+/* Ensure the root elements take up full height */
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set up the App container */
+.App {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main content should take up available space */
+.App > * {
+  flex: 1;
+}
+
+/* Footer should stay at the bottom */
+.app-footer {
+  flex-shrink: 0;
+}
